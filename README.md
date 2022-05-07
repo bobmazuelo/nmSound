@@ -1,6 +1,6 @@
 # nmSound
 ## Authors
-  bobmazuelo \\
+  mmazuelo  
   ndonaire
 
 T tempo

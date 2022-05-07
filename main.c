@@ -1,10 +1,10 @@
-#include "sound.h"
+#include "src/sound.h"
 
 int	main(int argc, char **argc)
 {
-	int	mm_file;
+	int	mmfile;
        
-	mm_file = open("music.mm", O_RDONLY);
+	mmfile = open("music.mm", O_RDONLY);
 	read_line(mmfile);
 	return (0);
 }

@@ -2,9 +2,9 @@
 # define SOUND_H
 
 typedef struct s_note {
-	char	note;		// a b c d e f g
+	char	note;		// c d e f g a b 
 	char	accident;	// +(sharp) -(flat)
-	int	duration;	//x1 x2 x4 x6 x8 x16 ...
+	int	duration;	// c1 d2 e4 f6 g8 a16 ...
 }	t_note;
 
 char	*read_file(int fd);

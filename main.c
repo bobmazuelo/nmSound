@@ -8,6 +8,6 @@ int	main()
 	int	mmfile;
        
 	mmfile = open("music.mm", O_RDONLY);
-	rea_line(mmfile);
+	read_line(mmfile);
 	return (0);
 }

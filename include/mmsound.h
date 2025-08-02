@@ -58,6 +58,9 @@ namespace mmsound {
 	};
 } // namespace mmsound
 
-void	parser_mmline(std::string &line);
+void    parser_mmline(std::string &line);
+
+void    generate_csound(const std::vector<mmsound::Nota>& notes,
+        const std::string &filename);
 
 #endif

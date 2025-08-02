@@ -1,8 +1,23 @@
-AR = ar -rcs
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
-SRCS =
-OBJS =
+SRCS = main.c \
+src/read_file.c
+OBJS = $(SRCS:.c=.o)
+NAME = nmsound
 
-.PHONY: all
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
+

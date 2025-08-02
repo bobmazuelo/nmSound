@@ -1,23 +1,28 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-
-SRCS = main.c \
-src/read_file.c
-OBJS = $(SRCS:.c=.o)
-NAME = nmsound
+SRDIR = src/
+SRC = $(wildcard $(SRDIR)*.cpp)
+NAME = bin/mmsound
+DSRC = $(addprefix $(SRDIR), $(SRC))
+OBJS = $(SRC:.cpp=.o)
+CC = g++
+CFLAGS = -std=c++20 -Wall -Wextra -Werror -Iinclude
+RM = rm -rf
 
 all: $(NAME)
 
+$(SRDIR)%.o: $(SRDIR)%.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
+
+run:
+	./$(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-

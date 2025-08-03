@@ -44,10 +44,10 @@ namespace mmsound {
 			// void prolongar(float factor) { duracion *= factor; }
 			
                         std::string toString() const {
-                                return std::string(1, nombre) + " A:" +
-                                       std::string(1, alteracion) + " O:" +
-                                       std::to_string(octava) + " D(" +
-                                       std::to_string(duracion) + ")";
+                                return std::string(1, nombre) + 
+					" A:" + std::string(1, alteracion) + 
+					" O:" + std::to_string(octava) + 
+					" D(" + std::to_string(duracion) + ")";
                         }
         };
 	
